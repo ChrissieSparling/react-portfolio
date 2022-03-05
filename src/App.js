@@ -1,11 +1,12 @@
+
 import React, {useState,useEffect} from "react";
 import Header from "./Components/Header";
-import Work from "./Components/Work";
 import Home from "./Components/Home";
 import Contact from "./Components/Contact";
 import Resume from "./Components/Resume";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
+import Work from "./Components/Work";
 import './index.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             case "about":
                 setPageContent(<About/>);
             break;
+           
         }
     },[page])
 

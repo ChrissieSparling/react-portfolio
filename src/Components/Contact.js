@@ -7,7 +7,7 @@ function Contact() {
             <div className="row">
                 <h3>You can reach me at:</h3>
                 <p>mailto:gigglewrks@aol.com</p>
-                <P>cell phone: 253-334-7175</P>
+                <p>cell phone: 253-334-7175</p>
             </div>
         </div>
     );
