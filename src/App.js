@@ -1,46 +1,28 @@
 
-import React, {useState,useEffect} from "react";
-import Header from "./Components/Header";
-import Home from "./Components/Home";
-import Contact from "./Components/Contact";
-import Resume from "./Components/Resume";
-import About from "./Components/About";
-import Footer from "./Components/Footer";
-import Work from "./Components/Work";
-import './index.css';
+import React, { useState, useEffect } from "react";
+import './App.css';
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.css'
+import Navbar from "./Components/Navbar"
+import Home from "./Components/Home"
+import About from "./Components/About"
+import Projects from "./Components/Projects"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-    const [page,setPage] = useState('home');
-    const [pageContent,setPageContent] = useState(<Home/>)
-
-    useEffect(()=>{
-        switch(page){
-            default:
-                setPageContent(<Home/>);
-            break;
-            case "work":
-                setPageContent(<Work/>);
-            break;
-            case "contact":
-                setPageContent(<Contact/>);
-            break;
-            case "resume":
-                setPageContent(<Resume/>);
-            break;
-            case "about":
-                setPageContent(<About/>);
-            break;
-           
-        }
-    },[page])
-
-    return (
-        <div id="App" className="App">
-            <Header page={page} setPage={setPage}/>
-            {pageContent}
-            <Footer/>
-        </div>
-    );
+  return (
+    <Router>
+      <div className="App">
+    <Navbar/>
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/projects" element={<Projects/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/contact" element={<About/>} />
+    </Routes>
+    </div>
+    </Router>
+  );
 }
 
 export default App;
